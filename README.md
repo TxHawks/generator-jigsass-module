@@ -1,5 +1,9 @@
-# generator-jigsass-module [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Scaffold out a module for use in the jigSass framework.
+# generator-jigsass-module
+
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+
+> A Yeoman generator for scaffolding out a module for use in the JigSass framework.
 
 ## Installation
 
@@ -13,6 +17,7 @@ npm i -g generator-jigsass-module
 Then generate your new project:
 
 ```bash
+mkdir jigsass-my-new-model && cd $_
 yo jigsass-module
 ```
 
@@ -22,12 +27,12 @@ Yeoman has a heart of gold. He&#39;s a person with feelings and opinions, but he
 
 ## License
 
-MIT 
+MIT
 
 
 [npm-image]: https://badge.fury.io/js/generator-jigsass-module.svg
 [npm-url]: https://npmjs.org/package/generator-jigsass-module
-[travis-image]: https://travis-ci.org/haaretz/generator-jigsass-module.svg?branch=master
-[travis-url]: https://travis-ci.org/haaretz/generator-jigsass-module
-[daviddm-image]: https://david-dm.org/haaretz/generator-jigsass-module.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/haaretz/generator-jigsass-module
+[travis-image]: https://travis-ci.org/TxHawks/generator-jigsass-module.svg?branch=master
+[travis-url]: https://travis-ci.org/TxHawks/generator-jigsass-module
+[daviddm-image]: https://david-dm.org/TxHawks/generator-jigsass-module.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/TxHawks/generator-jigsass-module
