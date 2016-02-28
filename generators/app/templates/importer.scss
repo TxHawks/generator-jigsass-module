@@ -1,0 +1,9 @@
+// *****************************
+// Importer for testing partials
+// *****************************
+
+// General use testing helpers
+@import 'test/fixtures/helpers/_test-helpers.scss';
+
+// project files.
+@import 'scss/index.scss';

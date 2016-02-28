@@ -1,0 +1,12 @@
+{
+  "theme": "jigsass",
+
+  "display": {
+    "access": ["public", "private"],
+    "alias": true
+  },
+
+  "descriptionPath": "README.md",
+  "privatePrefix": "^[_-]",
+    "sort": ["group", "access"]
+}

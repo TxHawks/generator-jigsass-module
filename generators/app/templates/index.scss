@@ -1,0 +1,75 @@
+// *************************************
+//
+// # <%= moduleName %><% if (description) { %>
+// -> <%= description %><% } else { %>
+// -> Description text<% } %><% if (authorName) { %>
+//
+// Author: <%= authorName %><% if (authorEmail) { %> (<%= authorEmail %>)<% } %><% } %><% if (homepage) { %>
+// <%= homepage %><% } %>
+//
+// *************************************
+
+// Please document your module's sass
+// with sassDoc and the generated css
+// with mdcss.
+// example sassDoc doclet:
+/// An example doclet, to be removed.
+/// @type {string} ('Please remove me')
+/// @group delme
+/// @see http://sassdoc.com/annotations/
+$an-example-var-for-docs: 'Please remove me';
+
+// example mdcss declet:
+/*---
+section: Documentation Example
+sort: -10
+---
+This is how you annotate mdcss doclets.
+See [here](https://txhawks.github.io/mdcss-theme-jigsass/demo) for more details.
+*/
+
+
+
+
+
+
+// -------------------------------------
+// Modifiers
+// -------------------------------------
+
+//
+
+
+
+
+
+// -------------------------------------
+// Items
+// -------------------------------------
+
+//
+
+
+
+
+
+// -------------------------------------
+// States
+// -------------------------------------
+
+//
+
+
+
+
+
+// -------------------------------------
+// Context
+// -------------------------------------
+
+//
+
+
+
+
+
