@@ -16,7 +16,7 @@ function jigsassifyName(name) {
   return hasJigsass ? kebabedName : 'jigsass-' + kebabedName;
 }
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = yeoman.Base.extend({
   prompting: function () {
     var done = this.async();
 
@@ -102,7 +102,7 @@ module.exports = yeoman.generators.Base.extend({
     ];
 
     this.prompt(prompts, function (props) {
-      for (var prop in props) {
+      for (var prop in props) {  // eslint-disable-line vars-on-top
         if (props.hasOwnProperty(prop)) {
           this[prop] = props[prop];
         }

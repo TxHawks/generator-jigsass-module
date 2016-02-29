@@ -1,5 +1,7 @@
 'use strict';
 
+/* Global: assert, fs, path, Sassaby,  */
+
 describe('<%= moduleName %>', () => {
   const file = path.resolve(__dirname, 'helpers/importer.scss');
   const sassaby = new Sassaby(file);
