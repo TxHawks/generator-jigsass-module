@@ -4,6 +4,10 @@ import assert from 'yeoman-assert';
 import helpers from 'yeoman-test';
 
 describe('generator-jigsass-module:app', () => {
+  it('Can be required', () => {
+    require('../generators/app');
+  });
+
   describe('Basic functionality', () => {
     before((done) => {
       helpers.run(path.join(__dirname, '../generators/app'))
@@ -11,10 +15,6 @@ describe('generator-jigsass-module:app', () => {
         name: 'test name',
       })
       .on('end', done);
-    });
-
-    it('Is can be required', () => {
-      require('../generators/app');
     });
 
     it('Created files', () => {
