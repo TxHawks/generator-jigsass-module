@@ -6,6 +6,7 @@ import gulp from 'gulp';
 import eslint from 'gulp-eslint';
 import excludeGitignore from 'gulp-exclude-gitignore';
 import mocha from 'gulp-mocha';
+import coveralls from 'gulp-coveralls';
 import istanbul from 'gulp-istanbul';
 import nsp from 'gulp-nsp';
 import plumber from 'gulp-plumber';
@@ -41,7 +42,14 @@ gulp.task('test', ['pre-test'], (cb) => {
     .on('end', () => { cb(mochaErr); });
 });
 
+gulp.task('coveralls', ['test'], () =>
+  !process.env.CI ?
+    undefined :
+    gulp.src(path.join(__dirname, 'coverage/lcov.info'))
+      .pipe(coveralls())
+);
+
 gulp.task('watch', () => { gulp.watch(['generators/**/*.js', 'test/**'], ['lint']); });
 
-gulp.task('prepublish', ['nsp']);
+gulp.task('prepublish', ['nsp', 'coveralls']);
 gulp.task('default', ['lint', 'test']);

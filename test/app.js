@@ -25,7 +25,6 @@ describe('generator-jigsass-module:app', () => {
         '.gitignore',
         '.sassdocrc',
         '.stylelintrc',
-        '.travis.yml',
         'gulpfile.babel.js',
         'package.json',
         'README.md',
@@ -260,12 +259,6 @@ describe('generator-jigsass-module:app', () => {
       });
       it('Created a .travis.yml file', () => {
         assert.file(['.travis.yml']);
-      });
-      it('Included travis-dependant badges in README.md', () => {
-        assert.fileContent('README.md', '[![Build Status][travis-image]][travis-url] ');
-      });
-      it('Injected travis-dependant badge-dfeinitions into README.md', () => {
-        assert.fileContent('README.md', '[travis-image]: https://travis-ci.org/');
       });
     });
 
