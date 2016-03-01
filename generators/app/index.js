@@ -164,6 +164,7 @@ module.exports = yeoman.Base.extend({
         autoprefixer: '^6.3.3',
         'babel-core': '^6.5.2',
         'babel-preset-es2015': '^6.5.0',
+        'babel-register': '^6.6.0',
         'browser-sync': '^2.11.1',
         chai: '^3.5.0',
         del: '^2.2.0',
