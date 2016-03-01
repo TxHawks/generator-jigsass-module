@@ -133,6 +133,7 @@ module.exports = yeoman.Base.extend({
       version: '0.0.0',
       main: 'index.scss',
       files: ['scss'],
+      private: true,
       repository: {
         type: 'git',
         url: this.githubAccount + '/' + this.moduleName,
