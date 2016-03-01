@@ -28,6 +28,7 @@ describe('generator-jigsass-module:app', () => {
         'gulpfile.babel.js',
         'package.json',
         'README.md',
+        'DOCS.md',
         'CHANGELOG.md',
         'scss/index.scss',
         'sgSrc/sg.scss',
@@ -76,6 +77,9 @@ describe('generator-jigsass-module:app', () => {
       it('Injected the jigsassified name into README.md', () => {
         assert.fileContent('README.md', '@import \'path/to/jigsass-test-name\';');
       });
+      it('Injected the jigsassified name into DOCS.md', () => {
+        assert.fileContent('DOCS.md', '@import \'path/to/jigsass-test-name\';');
+      });
       it('Injected the jigsassified name into gulpfile.babel.js', () => {
         assert.fileContent('gulpfile.babel.js', 'title: \'jigsass-test-name\'');
       });
@@ -87,6 +91,9 @@ describe('generator-jigsass-module:app', () => {
     describe('Title cased name', () => {
       it('Injected the tite-cased name into README.md', () => {
         assert.fileContent('README.md', 'JigSass Test Name');
+      });
+      it('Injected the tite-cased name into DOCS.md', () => {
+        assert.fileContent('DOCS.md', 'JigSass Test Name');
       });
     });
   });
@@ -112,6 +119,9 @@ describe('generator-jigsass-module:app', () => {
       });
       it('Injected the description into README.md', () => {
         assert.fileContent('README.md', 'A short description');
+      });
+      it('Injected the description into DOCS.md', () => {
+        assert.fileContent('DOCS.md', 'A short description');
       });
     });
 
@@ -189,8 +199,14 @@ describe('generator-jigsass-module:app', () => {
     it('Included account-dependant badges in README.md', () => {
       assert.fileContent('README.md', '[Dependency Status][daviddm-image]][daviddm-url]');
     });
+    it('Included account-dependant badges in DOCS.md', () => {
+      assert.fileContent('DOCS.md', '[Dependency Status][daviddm-image]][daviddm-url]');
+    });
     it('Injected account-dependant badge-dfeinitions into README.md', () => {
       assert.fileContent('README.md', '[daviddm-image]: https://david-dm.org/');
+    });
+    it('Injected account-dependant badge-dfeinitions into DOCS.md', () => {
+      assert.fileContent('DOCS.md', '[daviddm-image]: https://david-dm.org/');
     });
   });
 
@@ -244,7 +260,10 @@ describe('generator-jigsass-module:app', () => {
       assert.fileContent('package.json', '"license": "MIT"');
     });
     it('Injected license into README.md', () => {
-      assert.fileContent('README.md', 'License: MIT');
+      assert.fileContent('README.md', '**License:** MIT');
+    });
+    it('Injected license into DOCS.md', () => {
+      assert.fileContent('DOCS.md', '**License:** MIT');
     });
   });
 
@@ -276,8 +295,14 @@ describe('generator-jigsass-module:app', () => {
       it('Did not include travis-dependant badges in README.md', () => {
         assert.noFileContent('README.md', '[![Build Status][travis-image]][travis-url] ');
       });
+      it('Did not include travis-dependant badges in DOCS.md', () => {
+        assert.noFileContent('DOCS.md', '[![Build Status][travis-image]][travis-url] ');
+      });
       it('Did not inject travis-dependant badge-dfeinitions into README.md', () => {
         assert.noFileContent('README.md', '[travis-image]: https://travis-ci.org/');
+      });
+      it('Did not inject travis-dependant badge-dfeinitions into DOCS.md', () => {
+        assert.noFileContent('DOCS.md', '[travis-image]: https://travis-ci.org/');
       });
     });
   });

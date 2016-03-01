@@ -105,7 +105,7 @@ gulp.task('serve:sassdoc', ['sass:doc'], () => {
 
   gulp.watch(['sassdoc/**/*']).on('change', reload);
 
-  gulp.watch('scss/**/*.scss', ['sass:doc']);
+  gulp.watch(['scss/**/*.scss', 'DOCS.md'], ['sass:doc']);
 });
 
 gulp.task('serve:sg', ['sass:sg'], () => {
@@ -120,7 +120,7 @@ gulp.task('serve:sg', ['sass:sg'], () => {
 
   gulp.watch(['styleguide/**/*']).on('change', reload);
 
-  gulp.watch(['scss/**/*.scss', 'sgSrc/**/*'], ['sass:sg']);
+  gulp.watch(['scss/**/*.scss', 'sgSrc/**/*', 'DOCS.md'], ['sass:sg']);
 });
 
 gulp.task('clean', del.bind(null, ['styleguide']));

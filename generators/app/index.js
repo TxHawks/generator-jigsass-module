@@ -243,6 +243,18 @@ module.exports = yeoman.Base.extend({
         moduleTitle: this.moduleTitle,
       }
     );
+    this.fs.copyTpl(
+      this.templatePath('DOCS.md'),
+      this.destinationPath('DOCS.md'),
+      {
+        description: this.description,
+        githubAccount: this.githubAccount,
+        includeTravis: this.includeTravis,
+        license: this.license,
+        moduleName: this.moduleName,
+        moduleTitle: this.moduleTitle,
+      }
+    );
     this.fs.copy(
       this.templatePath('CHANGELOG.md'),
       this.destinationPath('CHANGELOG.md')

@@ -6,7 +6,7 @@
     "alias": true
   },
 
-  "descriptionPath": "README.md",
+  "descriptionPath": "DOCS.md",
   "privatePrefix": "^[_-]",
     "sort": ["group", "access"]
 }

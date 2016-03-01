@@ -166,7 +166,7 @@ functions available to the test suite, for use inside Sassaby tests:
                              # in the `test` directory.
 ```
 
-License: <%= license %>
+**License:** <%= license %>
 
 
 
