@@ -92,29 +92,29 @@ functions available to the test suite, for use inside Sassaby tests:
 <dl>
   <dt>jig-var-equals($value, $var) -> {boolean}<dt>
   <dd>
-		Check if a variable equals a value.
-		**$value** {*}: A value to compare the value of $var to.
-		**$var** {*}: The variable to test
+		Check if a variable equals a value.<br />
+		<strong>$value</strong> {*}: A value to compare the value of $var to.<br />
+		<strong>$var</strong> {*}: The variable to test<br />
 	</dd>
   <dt>jig-var-type-is($type, $var) -> {boolean}<dt>
   <dd>
-		Check if a variable is of a certain type.
-		**$type** {string}: A type to compare with the type of $var.
-		**$var** {*}: The variable to test
+		Check if a variable is of a certain type.<br />
+		<strong>$type</strong> {string}: A type to compare with the type of $var.<br />
+		<strong>$var</strong> {*}: The variable to test<br />
 	</dd>
   <dt>jig-map-key-equals($value, $map, $keys...) -> {boolean}<dt>
   <dd>
-		Check if a map's key is assigned a cerain value.
-		**$value** {*}:  A value to compare the value of a key in $map with.
-		**$map** {map}: The map to test.
-		**$keys... ** {arglist}: A recursive chain of keys.
+		Check if a map's key is assigned a cerain value.<br />
+		<strong>$value</strong> {*}:  A value to compare the value of a key in $map with.<br />
+		<strong>$map</strong> {map}: The map to test.<br />
+		<strong>$keys... </strong> {arglist}: A recursive chain of keys.<br />
 	</dd>
   <dt>jig-map-key-type-is($type, $map, keys...) -> {boolean}<dt>
   <dd>
-		Check if a map's key is of a certain type
-		**$type** {string}: A type to compare with the type of $var.
-		**$map** {map}: The map to test.
-		**$keys... ** {arglist}: A recursive chain of keys.
+		Check if a map's key is of a certain type<br />
+		<strong>$type</strong> {string}: A type to compare with the type of $var.<br />
+		<strong>$map</strong> {map}: The map to test.<br />
+		<strong>$keys... </strong> {arglist}: A recursive chain of keys.<br />
 	</dd>
 </dl>
 
