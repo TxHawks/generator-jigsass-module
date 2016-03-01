@@ -77,10 +77,10 @@ gulp.task('sass:sg', ['sass:lint', 'sass:test', 'clean'], () => {
         includePaths: ['scss'],
       }).on('error', $.sass.logError))
       .pipe($.postcss([
-        autoprefixer({ browsers: ['> 1%', 'last two versions', 'ie > 7'] }),
+        autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie > 7'] }),
         mdcss({
           theme: jigsassMdcss({ title: '<%= moduleName %>' }),
-          assets: ['scSrc/assets'],
+          assets: ['sgSrc/assets'],
         }),
       ]));
   }
