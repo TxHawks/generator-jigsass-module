@@ -87,7 +87,7 @@ gulp.task('sass:sg', ['sass:lint', 'sass:test', 'clean'], () => {
 
   function genDocs() {
     try {
-      fs.accessSync('noSstyleguide', fs.F_OK); return false;
+      fs.accessSync('noStyleguide', fs.F_OK); return false;
     }
     catch (e) { return true; }
   }

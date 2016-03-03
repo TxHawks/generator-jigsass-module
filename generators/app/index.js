@@ -286,6 +286,14 @@ module.exports = yeoman.Base.extend({
       this.destinationPath('gulpfile.babel.js'),
       { moduleName: this.moduleName }
     );
+    this.fs.copyTpl(
+      this.templatePath('sassdoc.sh'),
+      this.destinationPath('sassdoc.sh'),
+      {
+        githubAccount: this.githubAccount,
+        moduleName: this.moduleName,
+      }
+    );
     this.fs.copy(
       this.templatePath('babelrc'),
       this.destinationPath('.babelrc')

@@ -30,6 +30,7 @@ describe('generator-jigsass-module:app', () => {
         'README.md',
         'DOCS.md',
         'CHANGELOG.md',
+        'sassdoc.sh',
         'scss/index.scss',
         'sgSrc/sg.scss',
         'test/test_jigsass-test-name.js',
@@ -265,6 +266,22 @@ describe('generator-jigsass-module:app', () => {
     it('Injected license into DOCS.md', () => {
       assert.fileContent('DOCS.md', '**License:** MIT');
     });
+  });
+
+  describe('Sassdoc deployment', () => {
+    before((done) => {
+      helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({
+        name: 'test name',
+        githubAccount: 'GHAtest',
+      })
+      .on('end', done);
+    });
+
+    it('Injected variables into script', () => {
+      assert.fileContent('sassdoc.sh', '# http://GHAtest.github.io/jigsass-test-name/');
+
+    })
   });
 
   describe('Travis', () => {
