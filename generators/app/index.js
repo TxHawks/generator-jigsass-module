@@ -184,7 +184,7 @@ module.exports = yeoman.Base.extend({
         sassaby: '^2.1.1',
         sassdoc: '^2.1.20',
         'sassdoc-theme-jigsass': '^0.2.12',
-        stylelint: '^4.4.0',
+        stylelint: '^4.5.1',
       },
     };
 

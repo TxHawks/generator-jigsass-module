@@ -280,8 +280,7 @@ describe('generator-jigsass-module:app', () => {
 
     it('Injected variables into script', () => {
       assert.fileContent('sassdoc.sh', '# http://GHAtest.github.io/jigsass-test-name/');
-
-    })
+    });
   });
 
   describe('Travis', () => {
