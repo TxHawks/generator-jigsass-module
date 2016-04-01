@@ -79,10 +79,16 @@ gulp.task('sass:sg', ['sass:lint', 'sass:test', 'clean'], () => {
       .pipe($.postcss([
         autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie > 7'] }),
         mdcss({
-          theme: jigsassMdcss({ title: '<%= moduleName %>' }),
+          theme: jigsassMdcss({
+            title: '<%= moduleName %>',
+            examples: {
+              css:['assets/sg.css']
+            }
+          }),
           assets: ['sgSrc/assets'],
         }),
-      ]));
+      ]))
+      .pipe(gulp.dest('.docs/styleguide/assets'));
   }
 
   function genDocs() {
@@ -99,11 +105,11 @@ gulp.task('serve:sassdoc', ['sass:doc'], () => {
     port: 9000,
     reloadDelay: 4000,
     server: {
-      baseDir: 'sassdoc',
+      baseDir: 'docs/sassdoc',
     },
   });
 
-  gulp.watch(['sassdoc/**/*']).on('change', reload);
+  gulp.watch(['docs/sassdoc/**/*']).on('change', reload);
 
   gulp.watch(['scss/**/*.scss', 'DOCS.md'], ['sass:doc']);
 });
@@ -114,16 +120,16 @@ gulp.task('serve:sg', ['sass:sg'], () => {
     port: 9001,
     reloadDelay: 4000,
     server: {
-      baseDir: 'styleguide',
+      baseDir: 'docs/styleguide',
     },
   });
 
-  gulp.watch(['styleguide/**/*']).on('change', reload);
+  gulp.watch(['docs/styleguide/**/*']).on('change', reload);
 
   gulp.watch(['scss/**/*.scss', 'sgSrc/**/*', 'DOCS.md'], ['sass:sg']);
 });
 
-gulp.task('clean', del.bind(null, ['styleguide']));
+gulp.task('clean', del.bind(null, ['docs/styleguide']));
 
 gulp.task('tdd', ['sass:lint', 'sass:test'], () => {
   gulp.watch('scss/**/*.scss', ['sass:lint', 'sass:test']);

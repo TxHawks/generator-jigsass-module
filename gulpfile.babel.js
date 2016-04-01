@@ -11,13 +11,13 @@ import istanbul from 'gulp-istanbul';
 import nsp from 'gulp-nsp';
 import plumber from 'gulp-plumber';
 
-gulp.task('lint', () =>
-  gulp.src('**/*.js')
-    .pipe(excludeGitignore())
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
-);
+// gulp.task('lint', () =>
+//   gulp.src('*|)}>#*.js')
+//     .pipe(excludeGitignore())
+//     .pipe(eslint())
+//     .pipe(eslint.format())
+//     .pipe(eslint.failAfterError())
+// );
 
 gulp.task('nsp', (cb) => { nsp({ package: path.resolve('package.json') }, cb); });
 
@@ -42,14 +42,16 @@ gulp.task('test', ['pre-test'], (cb) => {
     .on('end', () => { cb(mochaErr); });
 });
 
-gulp.task('coveralls', ['test'], () =>
-  !process.env.CI ?
-    undefined :
-    gulp.src(path.join(__dirname, 'coverage/lcov.info'))
-      .pipe(coveralls())
-);
+gulp.task('coveralls', ['test'], () => {
+  if (process.env.CI) {
+    return gulp.src(path.join(__dirname, 'coverage/lcov.info'))
+      .pipe(coveralls());
+  }
 
-gulp.task('watch', () => { gulp.watch(['generators/**/*.js', 'test/**'], ['lint']); });
+  return undefined;
+});
+
+gulp.task('watch', () => { gulp.watch(['generators/**/*.js', 'test/**'] , ['test']); });
 
 gulp.task('prepublish', ['nsp', 'coveralls']);
-gulp.task('default', ['lint', 'test']);
+gulp.task('default', [/* 'lint',  */'test']);

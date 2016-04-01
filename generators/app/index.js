@@ -131,7 +131,8 @@ module.exports = yeoman.Base.extend({
         email: this.authorEmail,
       },
       version: '0.0.0',
-      main: 'index.scss',
+      main: 'scss/index.scss',
+      style: 'scss/index.scss',
       files: ['scss'],
       private: true,
       repository: {
@@ -152,7 +153,7 @@ module.exports = yeoman.Base.extend({
       ],
       eyeglass: {
         exports: false,
-        needs: '^0.8.2',
+        needs: '^0.8.3',
         sassDir: 'scss',
       },
       scripts: {
@@ -168,7 +169,7 @@ module.exports = yeoman.Base.extend({
         'browser-sync': '^2.11.1',
         chai: '^3.5.0',
         del: '^2.2.0',
-        eyeglass: '^0.8.2',
+        eyeglass: '^0.8.3',
         gulp: '^3.9.1',
         'gulp-load-plugins': '^1.2.0',
         'gulp-mocha': '^2.2.0',
@@ -177,14 +178,14 @@ module.exports = yeoman.Base.extend({
         'gulp-sass': '^2.2.0',
         'gulp-util': '^3.0.7',
         mdcss: '^1.5.1',
-        'mdcss-theme-jigsass': '^0.1.5',
+        'mdcss-theme-jigsass': '^0.2.10',
         'postcss-reporter': '^1.3.3',
         'postcss-scss': '^0.1.5',
         'run-sequence': '^1.1.5',
         sassaby: '^2.1.1',
         sassdoc: '^2.1.20',
         'sassdoc-theme-jigsass': '^0.2.12',
-        stylelint: '^4.5.1',
+        stylelint: '^5.2.1',
       },
     };
 
@@ -207,6 +208,7 @@ module.exports = yeoman.Base.extend({
     mkdirp('sgSrc');
     mkdirp('sgSrc/assets');
     mkdirp('test');
+    mkdirp('docs');
     mkdirp('test/helpers');
 
     // Module files
@@ -287,8 +289,8 @@ module.exports = yeoman.Base.extend({
       { moduleName: this.moduleName }
     );
     this.fs.copyTpl(
-      this.templatePath('sassdoc.sh'),
-      this.destinationPath('sassdoc.sh'),
+      this.templatePath('gh-pages.sh'),
+      this.destinationPath('gh-pages.sh'),
       {
         githubAccount: this.githubAccount,
         moduleName: this.moduleName,
@@ -321,9 +323,10 @@ module.exports = yeoman.Base.extend({
 
 
     if (this.includeTravis) {
-      this.composeWith('travis', {}, {
-        local: require.resolve('generator-travis/generators/app'),
-      });
+      this.fs.copy(
+        this.templatePath('travis.yml'),
+        this.destinationPath('.travis.yml')
+      );
     }
   },
 
