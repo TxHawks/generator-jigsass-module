@@ -79,10 +79,16 @@ gulp.task('sass:sg', ['sass:lint', 'sass:test', 'clean'], () => {
       .pipe($.postcss([
         autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'ie > 7'] }),
         mdcss({
-          theme: jigsassMdcss({ title: '<%= moduleName %>' }),
+          theme: jigsassMdcss({
+            title: '<%= moduleName %>',
+            examples: {
+              css:['assets/sg.css']
+            }
+          }),
           assets: ['sgSrc/assets'],
         }),
-      ]));
+      ]))
+      .pipe(gulp.dest('./styleguide/assets'));
   }
 
   function genDocs() {
