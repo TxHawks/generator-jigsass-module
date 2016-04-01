@@ -42,12 +42,14 @@ gulp.task('test', ['pre-test'], (cb) => {
     .on('end', () => { cb(mochaErr); });
 });
 
-gulp.task('coveralls', ['test'], () =>
-  !process.env.CI ?
-    undefined :
-    gulp.src(path.join(__dirname, 'coverage/lcov.info'))
-      .pipe(coveralls())
-);
+gulp.task('coveralls', ['test'], () => {
+  if (process.env.CI) {
+    return gulp.src(path.join(__dirname, 'coverage/lcov.info'))
+      .pipe(coveralls());
+  }
+
+  return undefined;
+});
 
 gulp.task('watch', () => { gulp.watch(['generators/**/*.js', 'test/**'], ['lint']); });
 
