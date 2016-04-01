@@ -51,7 +51,7 @@ gulp.task('coveralls', ['test'], () => {
   return undefined;
 });
 
-gulp.task('watch', () => { gulp.watch(['generators/**/*.js', 'test/**']/* , ['lint'] */); });
+gulp.task('watch', () => { gulp.watch(['generators/**/*.js', 'test/**'] , ['test']); });
 
 gulp.task('prepublish', ['nsp', 'coveralls']);
 gulp.task('default', [/* 'lint',  */'test']);

@@ -30,7 +30,7 @@ describe('generator-jigsass-module:app', () => {
         'README.md',
         'DOCS.md',
         'CHANGELOG.md',
-        'sassdoc.sh',
+        'gh-pages.sh',
         'scss/index.scss',
         'sgSrc/sg.scss',
         'test/test_jigsass-test-name.js',
@@ -268,7 +268,7 @@ describe('generator-jigsass-module:app', () => {
     });
   });
 
-  describe('Sassdoc deployment', () => {
+  describe('Docs deployment', () => {
     before((done) => {
       helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
@@ -279,7 +279,7 @@ describe('generator-jigsass-module:app', () => {
     });
 
     it('Injected variables into script', () => {
-      assert.fileContent('sassdoc.sh', '# http://GHAtest.github.io/jigsass-test-name/');
+      assert.fileContent('gh-pages.sh', '# http://GHAtest.github.io/jigsass-test-name/');
     });
   });
 

@@ -28,7 +28,6 @@
     "babel-preset-es2015": "^6.5.0",
     "babel-register": "^6.6.0",
     "eslint-config-airbnb": "^6.0.2",
-    "generator-travis": "^1.2.3",
     "git-remote-origin-url": "^2.0.0",
     "github-username": "^2.1.0",
     "gulp": "^3.9.1",
