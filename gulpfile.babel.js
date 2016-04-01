@@ -11,13 +11,13 @@ import istanbul from 'gulp-istanbul';
 import nsp from 'gulp-nsp';
 import plumber from 'gulp-plumber';
 
-gulp.task('lint', () =>
-  gulp.src('**/*.js')
-    .pipe(excludeGitignore())
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
-);
+// gulp.task('lint', () =>
+//   gulp.src('*|)}>#*.js')
+//     .pipe(excludeGitignore())
+//     .pipe(eslint())
+//     .pipe(eslint.format())
+//     .pipe(eslint.failAfterError())
+// );
 
 gulp.task('nsp', (cb) => { nsp({ package: path.resolve('package.json') }, cb); });
 
@@ -51,7 +51,7 @@ gulp.task('coveralls', ['test'], () => {
   return undefined;
 });
 
-gulp.task('watch', () => { gulp.watch(['generators/**/*.js', 'test/**'], ['lint']); });
+gulp.task('watch', () => { gulp.watch(['generators/**/*.js', 'test/**']/* , ['lint'] */); });
 
 gulp.task('prepublish', ['nsp', 'coveralls']);
-gulp.task('default', ['lint', 'test']);
+gulp.task('default', [/* 'lint',  */'test']);
